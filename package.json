@@ -7,8 +7,7 @@
   "types": "./dist/index.d.ts",
   "files": ["dist"],
   "scripts": {
-    "build": "tsup",
-    "publish": "npm run build && npm publish"
+    "build": "tsup"
   },
   "repository": {
     "type": "git",
