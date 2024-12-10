@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/Lazco-Studio/VirtFusion/issues"
   },
-  "homepage": "https://github.com/Lazco-Studio/VirtFusion#readme",
+  "homepage": "https://github.com/Lazco-Studio/VirtFusion/wiki",
   "dependencies": {
     "@types/lodash": "^4.17.13",
     "@types/tcp-ping": "^0.1.6",
