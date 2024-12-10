@@ -28,6 +28,7 @@
     "url": "https://github.com/Lazco-Studio/VirtFusion/issues"
   },
   "homepage": "https://github.com/Lazco-Studio/VirtFusion/wiki",
+  "packageManager": "pnpm@9.14.4",
   "dependencies": {
     "@types/lodash": "^4.17.13",
     "@types/tcp-ping": "^0.1.6",
