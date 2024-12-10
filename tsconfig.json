@@ -18,12 +18,14 @@
     "baseUrl": "./",
     "outDir": "./dist",
     "paths": {
-      "types/*": ["src/types/*"],
-      "modules/*": ["src/modules/*"],
+      "types/*": ["types/*"],
+      "modules/*": ["modules/*"],
     }
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "types/**/*",
+    "modules/**/*"
   ],
   "exclude": ["node_modules", ".vscode", "dist"]
 }
