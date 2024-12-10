@@ -1,6 +1,6 @@
 {
   "name": "virtfusion",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A client for VirtFusion API. Built with TypeScript.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -8,7 +8,7 @@
   "files": ["dist"],
   "scripts": {
     "build": "tsup",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "publish": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
