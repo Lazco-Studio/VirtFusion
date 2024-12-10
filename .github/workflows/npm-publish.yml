@@ -28,7 +28,7 @@ jobs:
         fi
 
   build-and-publish:
-      name: Build npm package
+      name: Build and publish npm package
       needs: [check]
       if: ${{ needs.check.outputs.commit_message != '' }}
       runs-on: blacksmith-32vcpu-ubuntu-2204
@@ -37,17 +37,21 @@ jobs:
       steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: "20"
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Build
-        run: npm run build
+        run: pnpm build
 
       - name: Publish to NPM
         uses: JS-DevTools/npm-publish@v3
