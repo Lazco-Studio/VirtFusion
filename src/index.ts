@@ -1,5 +1,3 @@
-export function add(a: number, b: number): number {
-  return a + b;
-}
+import { VirtFusionV1 } from "./virtfusion";
 
-console.log(add(3, 5)); //output: 8
+export { VirtFusionV1 };
