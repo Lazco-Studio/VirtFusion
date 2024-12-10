@@ -1,5 +1,5 @@
 # VirtFusion
-![](https://img.shields.io/npm/v/virtfusion.svg?color=blue) ![](https://img.shields.io/npm/l/virtfusion.svg?color=e3e3e3)
+![](https://img.shields.io/npm/v/virtfusion.svg?color=blue) ![](https://img.shields.io/npm/l/virtfusion.svg?color=e3e3e3) ![](https://img.shields.io/npm/last-update/virtfusion.svg)
 
 A TypeScript client for interacting with the VirtFusion API. Built by [Lazco Studio](https://github.com/Lazco-Studio).
 
