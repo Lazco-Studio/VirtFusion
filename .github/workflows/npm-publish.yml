@@ -26,6 +26,7 @@ jobs:
         else
           echo "Commit message does not match version format. Skipping release."
         fi
+
   build-and-publish:
       name: Build npm package
       needs: [check]
