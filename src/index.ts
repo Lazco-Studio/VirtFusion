@@ -60,7 +60,11 @@ export class VirtFusionV1 {
     },
   };
 
-  init(options: { host: string; token: string; useHttps: boolean }) {
+  static init(options: { host: string; token: string; useHttps: boolean }) {
+    if (VirtFusionV1.initialized) {
+      throw new Error("VirtFusionV1 has already been initialized");
+    }
+
     const { host, useHttps, token } = options;
 
     if (!host.trim() || !token.trim()) {
@@ -77,14 +81,15 @@ export class VirtFusionV1 {
     }
 
     VirtFusionV1.host = host;
-
     VirtFusionV1.https = useHttps;
-    VirtFusionV1.baseUrl = VirtFusionV1.https
-      ? `https://${VirtFusionV1.host}/api/v1`
-      : `http://${VirtFusionV1.host}/api/v1/`;
+    VirtFusionV1.baseUrl = useHttps
+      ? `https://${host}/api/v1`
+      : `http://${host}/api/v1/`;
     VirtFusionV1.token = token;
 
     VirtFusionV1.initialized = true;
+
+    return VirtFusionV1;
   }
 
   getValue(key: "host" | "https" | "baseUrl" | "token") {
