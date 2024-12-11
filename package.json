@@ -5,9 +5,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "tsup"
   },
@@ -15,13 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/Lazco-Studio/VirtFusion.git"
   },
-  "keywords": [
-    "VirtFusion",
-    "api",
-    "typescript",
-    "async",
-    "promise"
-  ],
+  "keywords": ["VirtFusion", "api", "typescript", "async", "promise"],
   "author": "Alex Liao, Lazco Studio LTD.",
   "license": "GPL-3.0",
   "bugs": {
@@ -31,17 +23,18 @@
   "packageManager": "pnpm@9.14.4",
   "dependencies": {
     "@swc/core": "^1.10.1",
-    "@types/lodash": "^4.17.13",
-    "@types/tcp-ping": "^0.1.6",
-    "axios": "^1.7.9",
     "lodash": "^4.17.21",
-    "module-alias": "^2.2.3",
     "tcp-ping": "^0.1.1",
+    "module-alias": "^2.2.3",
     "typescript": "^5.7.2",
+    "axios": "^1.7.9",
     "url-join-ts": "^1.0.5"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@types/lodash": "^4.17.13",
+    "@types/tcp-ping": "^0.1.6",
+    "@types/node": "^22.10.1",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "tsup": "^8.3.5",

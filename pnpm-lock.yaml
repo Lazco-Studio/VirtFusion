@@ -11,12 +11,6 @@ importers:
       '@swc/core':
         specifier: ^1.10.1
         version: 1.10.1
-      '@types/lodash':
-        specifier: ^4.17.13
-        version: 4.17.13
-      '@types/tcp-ping':
-        specifier: ^0.1.6
-        version: 0.1.6
       axios:
         specifier: ^1.7.9
         version: 1.7.9
@@ -39,6 +33,15 @@ importers:
       '@biomejs/biome':
         specifier: ^1.9.4
         version: 1.9.4
+      '@types/lodash':
+        specifier: ^4.17.13
+        version: 4.17.13
+      '@types/node':
+        specifier: ^22.10.1
+        version: 22.10.1
+      '@types/tcp-ping':
+        specifier: ^0.1.6
+        version: 0.1.6
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.10.1)(@types/node@22.10.1)(typescript@5.7.2)
