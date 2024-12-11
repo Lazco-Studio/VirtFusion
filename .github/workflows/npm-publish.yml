@@ -31,7 +31,7 @@ jobs:
       name: Build and publish npm package
       needs: [check]
       if: ${{ needs.check.outputs.commit_message != '' }}
-      runs-on: blacksmith-32vcpu-ubuntu-2204
+      runs-on: ubuntu-24.04
       permissions: write-all
 
       steps:
@@ -42,10 +42,10 @@ jobs:
         uses: pnpm/action-setup@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install
