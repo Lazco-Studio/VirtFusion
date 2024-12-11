@@ -1,5 +1,5 @@
 // biome-ignore lint/suspicious/noShadowRestrictedNames:
-import { isNaN } from "lodash";
+import isNaN from "lodash/isNaN";
 
 export function stringify(
   obj: any,

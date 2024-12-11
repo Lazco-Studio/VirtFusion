@@ -1,4 +1,6 @@
-import { camelCase, isArray, isPlainObject } from "lodash";
+import camelCase from "lodash/camelCase";
+import isArray from "lodash/isArray";
+import isPlainObject from "lodash/isPlainObject";
 
 export function convertKeyToCamelCase<T extends Record<string, any>>(
   data: unknown,

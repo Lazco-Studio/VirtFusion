@@ -1,5 +1,5 @@
 import { urlJoin } from "url-join-ts";
-import { isInteger } from "lodash";
+import isInteger from "lodash/isInteger";
 
 import { CustomError } from "modules/customError";
 import { HttpRequestMethods, sendRequest } from "../sendRequest";

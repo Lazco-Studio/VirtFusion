@@ -1,4 +1,4 @@
-import { isInteger } from "lodash";
+import isInteger from "lodash/isInteger";
 import { urlJoin } from "url-join-ts";
 
 import { CustomError } from "modules/customError";

@@ -1,4 +1,5 @@
-import { isEmpty, isInteger } from "lodash";
+import isEmpty from "lodash/isEmpty";
+import isInteger from "lodash/isInteger";
 
 import { CustomError } from "modules/customError";
 import { isSshPublicKey } from "modules/isSshPublicKey";

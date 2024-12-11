@@ -1,4 +1,4 @@
-import { isFinite as lodashIsFinite } from "lodash";
+import lodashIsFinite from "lodash/isFinite";
 import tcpp from "tcp-ping";
 
 interface PingResult extends tcpp.Result {

@@ -1,4 +1,5 @@
 import { HttpStatusCode } from "axios";
+
 import { json } from "modules/json";
 
 export class CustomError extends Error {

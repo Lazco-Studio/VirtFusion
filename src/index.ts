@@ -1,4 +1,5 @@
-import { isBoolean, isString } from "lodash";
+import isBoolean from "lodash/isBoolean";
+import isString from "lodash/isString";
 
 import { listServer, type ListOptions } from "./functions/servers/list";
 import { retrieveServer } from "./functions/servers/retrieve";
