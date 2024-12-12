@@ -7,7 +7,7 @@ import { VirtFusionV1 } from "..";
 
 export async function sendRequest(
   method: HttpRequestMethods,
-  endpoint: string | string[],
+  endpoint: string[],
   options: {
     passToken: boolean;
     query?: object;
@@ -21,7 +21,7 @@ export async function sendRequest(
 
     const response = await axios({
       method,
-      url: urlJoin(String(virtfusion.getValue("baseUrl")), endpoint),
+      url: urlJoin(String(virtfusion.getValue("baseUrl")), ...endpoint),
       data: body,
       params: query,
       headers: {

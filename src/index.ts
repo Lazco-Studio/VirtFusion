@@ -10,6 +10,10 @@ import { type AddOptions, addSshKey } from "./functions/sshKeys/add";
 import { retrieveUserSshKeys } from "./functions/sshKeys/retrieveByUser";
 import { deleteSshKey } from "./functions/sshKeys/delete";
 import { retrieveServerTraffic } from "./functions/servers/traffic";
+import {
+  type ResetPasswordOptions,
+  resetPassword,
+} from "./functions/servers/resetPassword";
 
 export class VirtFusionV1 {
   private static initialized = false;
@@ -42,6 +46,13 @@ export class VirtFusionV1 {
     traffic: async (serverId: number) => {
       this.checkClassInitialized();
       return await retrieveServerTraffic(serverId);
+    },
+    resetPassword: async (
+      serverId: number,
+      resetPasswordOptions: ResetPasswordOptions,
+    ) => {
+      this.checkClassInitialized();
+      return await resetPassword(serverId, resetPasswordOptions);
     },
   };
 

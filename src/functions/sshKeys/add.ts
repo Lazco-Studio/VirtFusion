@@ -28,7 +28,7 @@ export async function addSshKey(addOptions: AddOptions) {
     });
   }
 
-  return (await sendRequest(HttpRequestMethods.POST, "ssh_keys", {
+  return (await sendRequest(HttpRequestMethods.POST, ["ssh_keys"], {
     passToken: true,
     body: addOptions,
   })) as Promise<AddSshKeyResponse>;
