@@ -1,4 +1,3 @@
-import { urlJoin } from "url-join-ts";
 import isInteger from "lodash/isInteger";
 
 import { CustomError } from "modules/customError";
@@ -21,7 +20,7 @@ export async function deleteServer(serverId: number, delay: number) {
 
   return (await sendRequest(
     HttpRequestMethods.DELETE,
-    urlJoin("servers", String(serverId)),
+    ["servers", String(serverId)],
     {
       passToken: true,
       query: {

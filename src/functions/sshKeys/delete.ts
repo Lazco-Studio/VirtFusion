@@ -1,4 +1,3 @@
-import { urlJoin } from "url-join-ts";
 import isInteger from "lodash/isInteger";
 
 import { CustomError } from "modules/customError";
@@ -14,7 +13,7 @@ export async function deleteSshKey(sshKeyId: number) {
 
   return (await sendRequest(
     HttpRequestMethods.DELETE,
-    urlJoin("ssh_keys", String(sshKeyId)),
+    ["ssh_keys", String(sshKeyId)],
     {
       passToken: true,
     },

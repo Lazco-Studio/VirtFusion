@@ -7,7 +7,7 @@ import { VirtFusionV1 } from "..";
 
 export async function sendRequest(
   method: HttpRequestMethods,
-  endpoint: string,
+  endpoint: string | string[],
   options: {
     passToken: boolean;
     query?: object;

@@ -1,7 +1,7 @@
 import { HttpRequestMethods, sendRequest } from "../sendRequest";
 
 export async function createServer(createOptions: CreateOptions) {
-  return await sendRequest(HttpRequestMethods.POST, "/servers", {
+  return await sendRequest(HttpRequestMethods.POST, "servers", {
     passToken: true,
     body: createOptions,
   });

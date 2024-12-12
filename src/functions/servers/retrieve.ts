@@ -1,5 +1,4 @@
 import isInteger from "lodash/isInteger";
-import { urlJoin } from "url-join-ts";
 
 import { CustomError } from "modules/customError";
 import { HttpRequestMethods, sendRequest } from "../sendRequest";
@@ -14,7 +13,7 @@ export async function retrieveServer(serverId: number) {
 
   return await sendRequest(
     HttpRequestMethods.GET,
-    urlJoin("servers", String(serverId)),
+    ["servers", String(serverId)],
     {
       passToken: true,
     },

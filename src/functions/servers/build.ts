@@ -1,11 +1,12 @@
-import { urlJoin } from "url-join-ts";
-
 import { HttpRequestMethods, sendRequest } from "../sendRequest";
 
-export async function buildServer(serverId: number, buildOptions: BuildOptions) {
+export async function buildServer(
+  serverId: number,
+  buildOptions: BuildOptions,
+) {
   return await sendRequest(
     HttpRequestMethods.POST,
-    urlJoin("servers", String(serverId), "build"),
+    ["servers", String(serverId), "build"],
     {
       passToken: true,
       body: buildOptions,

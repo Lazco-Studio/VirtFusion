@@ -1,11 +1,9 @@
-import { urlJoin } from "url-join-ts";
-
 import { sendRequest, HttpRequestMethods } from "../sendRequest";
 
 export async function retrieveUserSshKeys(userId: number) {
   return (await sendRequest(
     HttpRequestMethods.GET,
-    urlJoin("ssh_keys", "user", String(userId)),
+    ["ssh_keys", "user", String(userId)],
     {
       passToken: true,
     },
