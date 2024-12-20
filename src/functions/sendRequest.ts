@@ -13,10 +13,11 @@ export async function sendRequest<ResponseType>(
     passToken: boolean;
     query?: object;
     body?: object;
+    timeout?: number;
   },
 ) {
   try {
-    const { passToken, query, body } = options;
+    const { passToken, query, body, timeout } = options;
 
     const virtfusion = new VirtFusionV1();
 
@@ -25,6 +26,7 @@ export async function sendRequest<ResponseType>(
       url: urlJoin(String(virtfusion.getValue("baseUrl")), ...endpoint),
       data: body,
       params: query,
+      timeout: timeout || 10 * 1000,
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
