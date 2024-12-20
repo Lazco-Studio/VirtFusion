@@ -10,6 +10,7 @@ import { type AddOptions, addSshKey } from "./functions/sshKeys/add";
 import { retrieveUserSshKeys } from "./functions/sshKeys/retrieveByUser";
 import { deleteSshKey } from "./functions/sshKeys/delete";
 import { retrieveServerTraffic } from "./functions/servers/traffic";
+import { testConnection } from "./functions/general/testConnection";
 import {
   type ResetPasswordOptions,
   resetPassword,
@@ -21,6 +22,13 @@ export class VirtFusionV1 {
   private static https: boolean;
   private static baseUrl: string;
   private static token: string;
+
+  general = {
+    testConnection: async () => {
+      this.checkClassInitialized();
+      return await testConnection();
+    },
+  };
 
   server = {
     list: async (options?: ListOptions) => {
