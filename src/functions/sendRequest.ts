@@ -4,8 +4,9 @@ import { urlJoin } from "url-join-ts";
 import { object } from "modules/object";
 import { CustomError } from "modules/customError";
 import { VirtFusionV1 } from "..";
+import { isArray } from "lodash";
 
-export async function sendRequest(
+export async function sendRequest<ResponseType>(
   method: HttpRequestMethods,
   endpoint: string[],
   options: {
@@ -34,11 +35,16 @@ export async function sendRequest(
     });
 
     const responseData = response.data;
+
+    if (isArray(responseData)) {
+      return responseData as unknown as Promise<ResponseType>;
+    }
+
     const data = responseData?.data;
     return {
       ...object.convertKeyToCamelCase(responseData),
       data,
-    } as Promise<any>;
+    } as Promise<ResponseType>;
   } catch (error) {
     if (error?.response) {
       throw new CustomError(

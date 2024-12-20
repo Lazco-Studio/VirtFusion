@@ -11,7 +11,7 @@ export async function retrieveServer(serverId: number) {
     });
   }
 
-  return await sendRequest(
+  return await sendRequest<any>(
     HttpRequestMethods.GET,
     ["servers", String(serverId)],
     {

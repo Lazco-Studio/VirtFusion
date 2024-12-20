@@ -11,13 +11,13 @@ export async function deleteSshKey(sshKeyId: number) {
     });
   }
 
-  return (await sendRequest(
+  return await sendRequest<DeleteSshKeyResponse>(
     HttpRequestMethods.DELETE,
     ["ssh_keys", String(sshKeyId)],
     {
       passToken: true,
     },
-  )) as Promise<DeleteSshKeyResponse>;
+  );
 }
 
 export type DeleteSshKeyResponse = undefined;

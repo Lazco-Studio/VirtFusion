@@ -33,7 +33,7 @@ export async function listServer(
     });
   }
 
-  return await sendRequest(HttpRequestMethods.GET, ["servers"], {
+  return await sendRequest<any>(HttpRequestMethods.GET, ["servers"], {
     passToken: true,
     query: {
       type: responseType,

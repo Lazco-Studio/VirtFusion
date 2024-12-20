@@ -4,14 +4,14 @@ export async function resetPassword(
   serverId: number,
   resetPasswordOptions: ResetPasswordOptions,
 ) {
-  return (await sendRequest(
+  return await sendRequest<ResetServerPasswordResponse>(
     HttpRequestMethods.POST,
     ["servers", String(serverId), "resetPassword"],
     {
       passToken: true,
       body: resetPasswordOptions,
     },
-  )) as Promise<ResetServerPasswordResponse>;
+  );
 }
 
 export type ResetPasswordOptions = {

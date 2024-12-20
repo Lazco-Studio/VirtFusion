@@ -18,7 +18,7 @@ export async function deleteServer(serverId: number, delay: number) {
     });
   }
 
-  return (await sendRequest(
+  return await sendRequest<DeleteServerResponse>(
     HttpRequestMethods.DELETE,
     ["servers", String(serverId)],
     {
@@ -27,7 +27,7 @@ export async function deleteServer(serverId: number, delay: number) {
         delay,
       },
     },
-  )) as Promise<DeleteServerResponse>;
+  );
 }
 
 export type DeleteServerResponse = undefined;

@@ -4,7 +4,7 @@ export async function buildServer(
   serverId: number,
   buildOptions: BuildOptions,
 ) {
-  return await sendRequest(
+  return await sendRequest<any>(
     HttpRequestMethods.POST,
     ["servers", String(serverId), "build"],
     {

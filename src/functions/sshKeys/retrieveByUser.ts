@@ -1,13 +1,13 @@
 import { sendRequest, HttpRequestMethods } from "../sendRequest";
 
 export async function retrieveUserSshKeys(userId: number) {
-  return (await sendRequest(
+  return await sendRequest<RetrieveSshKeysByUserResponse>(
     HttpRequestMethods.GET,
     ["ssh_keys", "user", String(userId)],
     {
       passToken: true,
     },
-  )) as Promise<RetrieveSshKeysByUserResponse>;
+  );
 }
 
 export type RetrieveSshKeysByUserResponse = {

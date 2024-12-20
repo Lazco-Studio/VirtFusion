@@ -28,10 +28,14 @@ export async function addSshKey(addOptions: AddOptions) {
     });
   }
 
-  return (await sendRequest(HttpRequestMethods.POST, ["ssh_keys"], {
-    passToken: true,
-    body: addOptions,
-  })) as Promise<AddSshKeyResponse>;
+  return await sendRequest<AddSshKeyResponse>(
+    HttpRequestMethods.POST,
+    ["ssh_keys"],
+    {
+      passToken: true,
+      body: addOptions,
+    },
+  );
 }
 
 export type AddOptions = {
