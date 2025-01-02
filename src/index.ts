@@ -15,6 +15,7 @@ import {
   type ResetPasswordOptions,
   resetPassword,
 } from "./functions/servers/resetPassword";
+import { retrievePackages } from "./functions/packages/retrieve";
 
 export class VirtFusionV1 {
   private static initialized = false;
@@ -27,6 +28,13 @@ export class VirtFusionV1 {
     testConnection: async () => {
       this.checkClassInitialized();
       return await testConnection();
+    },
+  };
+
+  packages = {
+    retrieve: async () => {
+      this.checkClassInitialized();
+      return await retrievePackages();
     },
   };
 
